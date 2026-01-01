@@ -1,27 +1,17 @@
 import reflex as rx
-
-def heading():
-    return rx.vstack(
-            rx.heading( "POKEMON REFLEX LEAGUE",size="9"),
-            rx.text(
-                "Login • Battle • Become Champion",
-                font_size="18px",
-                color="#555",
-            ),
-            spacing="5",
-            justify='start',
-            min_height="20vh",
-        )
-
-
-#class State(rx.State):
+from .components.primary_button import *
+from .components.index_heading import *
+from .pages.setup import setup
 
 
 def index() -> rx.Component:
     return rx.container(
         rx.color_mode.button(position="top-right"),
-        heading(),
-        rx.button("Start Tournament"),
+        index_heading(),
+        primary_button(
+            "Start Tournament",
+            on_click=rx.redirect("/setup")
+        ),
         rx.text(
                 "Organize Pokémon tournaments with your friends in seconds",
                 font_size="14px",
@@ -31,5 +21,9 @@ def index() -> rx.Component:
     )
 
 
-app = rx.App()
-app.add_page(index)
+
+app = rx.App(
+    theme=rx.theme(radius="full", accent_color='cyan'),
+)
+app.add_page(index,route="/",title="Pokemon Reflex League")
+app.add_page(setup,route="/setup")

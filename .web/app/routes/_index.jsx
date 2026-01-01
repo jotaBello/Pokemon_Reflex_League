@@ -31,6 +31,17 @@ const on_click_9922dd3e837b9e087c86a2522c2c93f8 = useCallback(toggleColorMode, [
 }
 
 
+function Button_c1009af80a49d350d34307754dc4e140 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+const on_click_502571b0feb8ad89a38cb8453afdc33a = useCallback(((_e) => (addEvents([(ReflexEvent("_redirect", ({ ["path"] : "/setup", ["external"] : false, ["popup"] : false, ["replace"] : false }), ({  })))], [_e], ({  })))), [addEvents, ReflexEvent])
+
+  return (
+    jsx(RadixThemesButton,{css:({ ["color"] : "black", ["borderRadius"] : "12px", ["paddingInlineStart"] : "24px", ["paddingInlineEnd"] : "24px", ["paddingTop"] : "12px", ["paddingBottom"] : "12px", ["fontWeight"] : "bold", ["&:hover"] : ({ ["transform"] : "scale(1.05)" }), ["transition"] : "all 0.2s ease" }),onClick:on_click_502571b0feb8ad89a38cb8453afdc33a,size:"4"},"Start Tournament")
+  )
+}
+
+
 export default function Component() {
 
 
@@ -38,6 +49,6 @@ export default function Component() {
 
 
   return (
-    jsx(Fragment,{},jsx(RadixThemesContainer,{css:({ ["padding"] : "16px" }),size:"3"},jsx(Iconbutton_3bedd826d25a324edade2a6a1f71ed90,{},),jsx(RadixThemesFlex,{align:"start",className:"rx-Stack",css:({ ["minHeight"] : "20vh" }),direction:"column",justify:"start",gap:"5"},jsx(RadixThemesHeading,{size:"9"},"POKEMON REFLEX LEAGUE"),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "18px", ["color"] : "#555" })},"Login \u2022 Battle \u2022 Become Champion")),jsx(RadixThemesButton,{},"Start Tournament"),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "14px", ["color"] : "#777", ["marginTop"] : "16px" })},"Organize Pok\u00e9mon tournaments with your friends in seconds")),jsx("title",{},"PokemonReflexLeague | Index"),jsx("meta",{content:"favicon.ico",property:"og:image"},))
+    jsx(Fragment,{},jsx(RadixThemesContainer,{css:({ ["padding"] : "16px" }),size:"3"},jsx(Iconbutton_3bedd826d25a324edade2a6a1f71ed90,{},),jsx(RadixThemesFlex,{align:"start",className:"rx-Stack",css:({ ["minHeight"] : "20vh" }),direction:"column",justify:"start",gap:"5"},jsx(RadixThemesHeading,{size:"9"},"POKEMON REFLEX LEAGUE"),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "18px", ["color"] : "#555" })},"Login \u2022 Battle \u2022 Become Champion")),jsx(Button_c1009af80a49d350d34307754dc4e140,{},),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "14px", ["color"] : "#777", ["marginTop"] : "16px" })},"Organize Pok\u00e9mon tournaments with your friends in seconds")),jsx("title",{},"Pokemon Reflex League"),jsx("meta",{content:"favicon.ico",property:"og:image"},))
   )
 }
