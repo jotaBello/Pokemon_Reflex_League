@@ -18,6 +18,8 @@ def index() -> rx.Component:
                 color="#777",
                 margin_top="16px",
             ),
+        
+        rx.button("Click me",on_click=rx.toast.warning("This is a toast"))
     )
 
 

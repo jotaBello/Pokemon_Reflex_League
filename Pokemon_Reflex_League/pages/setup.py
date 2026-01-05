@@ -1,4 +1,6 @@
 import reflex as rx
+from Pokemon_Reflex_League.components.setup_heading import setup_heading
+from Pokemon_Reflex_League.components.add_team_button import add_team_button
 
 class Trainer(rx.Base):
     name:str
@@ -59,7 +61,7 @@ def add_trainer_button():
                 ),
                 on_submit=State.add_trainer,
                 reset_on_submit=False,
-        ),
+            ),
         max_width="450px",
         ),
     )
@@ -71,6 +73,7 @@ def trainers_table():
             rx.table.row(
                 rx.table.column_header_cell("Name"),
                 rx.table.column_header_cell("Region"),
+                rx.table.column_header_cell("Gender"),
                 rx.table.column_header_cell("Team")
             )
         ),
@@ -79,7 +82,7 @@ def trainers_table():
         ),
         variant="surface",
         size="3",
-        width="50%",
+        width="75%",
     )
 
 def show_trainer(trainer:Trainer):
@@ -87,17 +90,19 @@ def show_trainer(trainer:Trainer):
         rx.table.cell(trainer.name),
         rx.table.cell(trainer.region),
         rx.table.cell(trainer.gender),
+        rx.table.cell(add_team_button()),
         style={"_hover": {"bg": rx.color("gray", 3)}},
         align="center",
     )
 
 
 def setup() ->rx.Component:
-    return rx.vstack(
-        rx.color_mode.button(position="top-right"),
-        add_trainer_button(),
-        trainers_table(),
-        align="center",
-        width="100%",
-
+    return rx.container(
+        rx.vstack(
+            rx.color_mode.button(position="top-right"),
+            setup_heading(),
+            add_trainer_button(),
+            trainers_table(),
+            width="100%",
+        )
     )

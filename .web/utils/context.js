@@ -2,13 +2,13 @@ import { createContext, useContext, useMemo, useReducer, useState, createElement
 import { applyDelta, ReflexEvent, hydrateClientStorage, useEventLoop, refs } from "$/utils/state"
 import { jsx } from "@emotion/react";
 
-export const initialState = {"reflex___state____state": {"is_hydrated_rx_state_": false, "router_rx_state_": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "cookie": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": "", "raw_headers": {}}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}, "url": "", "route_id": ""}}, "reflex___state____state.pokemon__reflex__league___pages___setup____state": {"trainer_list_rx_state_": []}, "reflex___state____state.reflex___state____frontend_event_exception_state": {}, "reflex___state____state.reflex___state____on_load_internal_state": {}, "reflex___state____state.reflex___state____update_vars_internal_state": {}}
+export const initialState = {"reflex___state____state": {"is_hydrated_rx_state_": false, "router_rx_state_": {"session": {"client_token": "", "client_ip": "", "session_id": ""}, "headers": {"host": "", "origin": "", "upgrade": "", "connection": "", "cookie": "", "pragma": "", "cache_control": "", "user_agent": "", "sec_websocket_version": "", "sec_websocket_key": "", "sec_websocket_extensions": "", "accept_encoding": "", "accept_language": "", "raw_headers": {}}, "page": {"host": "", "path": "", "raw_path": "", "full_path": "", "full_raw_path": "", "params": {}}, "url": "", "route_id": ""}}, "reflex___state____state.pokemon__reflex__league___components___add_team_button____state": {"pokemons_rx_state_": [], "search_rx_state_": "", "selected_pokemons_rx_state_": [], "selected_set_rx_state_": []}, "reflex___state____state.pokemon__reflex__league___pages___setup____state": {"trainer_list_rx_state_": []}, "reflex___state____state.reflex___state____frontend_event_exception_state": {}, "reflex___state____state.reflex___state____on_load_internal_state": {}, "reflex___state____state.reflex___state____update_vars_internal_state": {}}
 
 export const defaultColorMode = "system"
 export const ColorModeContext = createContext(null);
 export const UploadFilesContext = createContext(null);
 export const DispatchContext = createContext(null);
-export const StateContexts = {reflex___state____state: createContext(null),reflex___state____state__pokemon__reflex__league___pages___setup____state: createContext(null),reflex___state____state__reflex___state____frontend_event_exception_state: createContext(null),reflex___state____state__reflex___state____on_load_internal_state: createContext(null),reflex___state____state__reflex___state____update_vars_internal_state: createContext(null),};
+export const StateContexts = {reflex___state____state: createContext(null),reflex___state____state__pokemon__reflex__league___components___add_team_button____state: createContext(null),reflex___state____state__pokemon__reflex__league___pages___setup____state: createContext(null),reflex___state____state__reflex___state____frontend_event_exception_state: createContext(null),reflex___state____state__reflex___state____on_load_internal_state: createContext(null),reflex___state____state__reflex___state____update_vars_internal_state: createContext(null),};
 export const EventLoopContext = createContext(null);
 export const clientStorage = {"cookies": {}, "local_storage": {}, "session_storage": {}}
 
@@ -93,6 +93,7 @@ export function EventLoopProvider({ children }) {
 
 export function StateProvider({ children }) {
   const [reflex___state____state, dispatch_reflex___state____state] = useReducer(applyDelta, initialState["reflex___state____state"])
+const [reflex___state____state__pokemon__reflex__league___components___add_team_button____state, dispatch_reflex___state____state__pokemon__reflex__league___components___add_team_button____state] = useReducer(applyDelta, initialState["reflex___state____state.pokemon__reflex__league___components___add_team_button____state"])
 const [reflex___state____state__pokemon__reflex__league___pages___setup____state, dispatch_reflex___state____state__pokemon__reflex__league___pages___setup____state] = useReducer(applyDelta, initialState["reflex___state____state.pokemon__reflex__league___pages___setup____state"])
 const [reflex___state____state__reflex___state____frontend_event_exception_state, dispatch_reflex___state____state__reflex___state____frontend_event_exception_state] = useReducer(applyDelta, initialState["reflex___state____state.reflex___state____frontend_event_exception_state"])
 const [reflex___state____state__reflex___state____on_load_internal_state, dispatch_reflex___state____state__reflex___state____on_load_internal_state] = useReducer(applyDelta, initialState["reflex___state____state.reflex___state____on_load_internal_state"])
@@ -100,6 +101,7 @@ const [reflex___state____state__reflex___state____update_vars_internal_state, di
   const dispatchers = useMemo(() => {
     return {
       "reflex___state____state": dispatch_reflex___state____state,
+"reflex___state____state.pokemon__reflex__league___components___add_team_button____state": dispatch_reflex___state____state__pokemon__reflex__league___components___add_team_button____state,
 "reflex___state____state.pokemon__reflex__league___pages___setup____state": dispatch_reflex___state____state__pokemon__reflex__league___pages___setup____state,
 "reflex___state____state.reflex___state____frontend_event_exception_state": dispatch_reflex___state____state__reflex___state____frontend_event_exception_state,
 "reflex___state____state.reflex___state____on_load_internal_state": dispatch_reflex___state____state__reflex___state____on_load_internal_state,
@@ -109,11 +111,12 @@ const [reflex___state____state__reflex___state____update_vars_internal_state, di
 
   return (
     createElement(StateContexts.reflex___state____state,{value: reflex___state____state},
+createElement(StateContexts.reflex___state____state__pokemon__reflex__league___components___add_team_button____state,{value: reflex___state____state__pokemon__reflex__league___components___add_team_button____state},
 createElement(StateContexts.reflex___state____state__pokemon__reflex__league___pages___setup____state,{value: reflex___state____state__pokemon__reflex__league___pages___setup____state},
 createElement(StateContexts.reflex___state____state__reflex___state____frontend_event_exception_state,{value: reflex___state____state__reflex___state____frontend_event_exception_state},
 createElement(StateContexts.reflex___state____state__reflex___state____on_load_internal_state,{value: reflex___state____state__reflex___state____on_load_internal_state},
 createElement(StateContexts.reflex___state____state__reflex___state____update_vars_internal_state,{value: reflex___state____state__reflex___state____update_vars_internal_state},
     createElement(DispatchContext, {value: dispatchers}, children)
-    )))))
+    ))))))
   )
 }

@@ -1,7 +1,7 @@
 import {Fragment,useCallback,useContext,useEffect} from "react"
 import {Button as RadixThemesButton,Container as RadixThemesContainer,Flex as RadixThemesFlex,Heading as RadixThemesHeading,IconButton as RadixThemesIconButton,Text as RadixThemesText} from "@radix-ui/themes"
 import {ColorModeContext,EventLoopContext} from "$/utils/context"
-import {ReflexEvent,isTrue} from "$/utils/state"
+import {ReflexEvent,isTrue,refs} from "$/utils/state"
 import {Moon as LucideMoon,Sun as LucideSun} from "lucide-react"
 import {jsx} from "@emotion/react"
 
@@ -42,6 +42,17 @@ const on_click_502571b0feb8ad89a38cb8453afdc33a = useCallback(((_e) => (addEvent
 }
 
 
+function Button_f25f19beca936ad958ba2a52451fc554 () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
+
+const on_click_df5dc1f3113e319e22ba26deb867d6c7 = useCallback(((_e) => (addEvents([(ReflexEvent("_call_function", ({ ["function"] : (() => (refs['__toast']?.["warning"]("This is a toast"))), ["callback"] : null }), ({  })))], [_e], ({  })))), [addEvents, ReflexEvent])
+
+  return (
+    jsx(RadixThemesButton,{onClick:on_click_df5dc1f3113e319e22ba26deb867d6c7},"Click me")
+  )
+}
+
+
 export default function Component() {
 
 
@@ -49,6 +60,6 @@ export default function Component() {
 
 
   return (
-    jsx(Fragment,{},jsx(RadixThemesContainer,{css:({ ["padding"] : "16px" }),size:"3"},jsx(Iconbutton_3bedd826d25a324edade2a6a1f71ed90,{},),jsx(RadixThemesFlex,{align:"start",className:"rx-Stack",css:({ ["minHeight"] : "20vh" }),direction:"column",justify:"start",gap:"5"},jsx(RadixThemesHeading,{size:"9"},"POKEMON REFLEX LEAGUE"),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "18px", ["color"] : "#555" })},"Login \u2022 Battle \u2022 Become Champion")),jsx(Button_c1009af80a49d350d34307754dc4e140,{},),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "14px", ["color"] : "#777", ["marginTop"] : "16px" })},"Organize Pok\u00e9mon tournaments with your friends in seconds")),jsx("title",{},"Pokemon Reflex League"),jsx("meta",{content:"favicon.ico",property:"og:image"},))
+    jsx(Fragment,{},jsx(RadixThemesContainer,{css:({ ["padding"] : "16px" }),size:"3"},jsx(Iconbutton_3bedd826d25a324edade2a6a1f71ed90,{},),jsx(RadixThemesFlex,{align:"start",className:"rx-Stack",css:({ ["minHeight"] : "20vh" }),direction:"column",justify:"start",gap:"5"},jsx(RadixThemesHeading,{size:"9"},"POKEMON REFLEX LEAGUE"),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "18px", ["color"] : "#555" })},"Login \u2022 Battle \u2022 Become Champion")),jsx(Button_c1009af80a49d350d34307754dc4e140,{},),jsx(RadixThemesText,{as:"p",css:({ ["fontSize"] : "14px", ["color"] : "#777", ["marginTop"] : "16px" })},"Organize Pok\u00e9mon tournaments with your friends in seconds"),jsx(Button_f25f19beca936ad958ba2a52451fc554,{},)),jsx("title",{},"Pokemon Reflex League"),jsx("meta",{content:"favicon.ico",property:"og:image"},))
   )
 }
